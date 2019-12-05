@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("hello")
 public class HelloController {
-// 测试提交。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
+
     @Resource
     private HelloService helloService;
 
