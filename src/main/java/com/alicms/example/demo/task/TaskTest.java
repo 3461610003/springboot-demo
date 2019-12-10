@@ -15,9 +15,9 @@ import java.util.Calendar;
  * @Author zhenghao
  * @Date 2019/8/29 14:06
  */
-@Component
+//@Component
 //@Configuration      //1.主要用于标记配置类，兼备Component的效果。
-@EnableScheduling   // 2.开启定时任务
+//@EnableScheduling   // 2.开启定时任务
 public class TaskTest {
 
     private DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -3,18 +3,20 @@ package com.alicms.example.demo.controller;
 import com.alicms.example.demo.model.Person;
 import com.alicms.example.demo.model.User;
 import com.alicms.example.demo.service.HelloService;
+import com.alicms.example.demo.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * @Description hello
  * @Author zhenghao
  * @Date 2019/8/29 14:01
  */
-@RestController
-@RequestMapping("hello")
+//@RestController
+//@RequestMapping("hello")
 public class HelloController {
 
     @Resource
@@ -31,27 +33,50 @@ public class HelloController {
         return hello + phone;
     }
 
-    @GetMapping
-    public Person getPerson() {
-        Person person = new Person(1L, 20, "张三");
+
+    @Resource
+    private PersonService personService;
+
+    // 查询
+    @GetMapping(path = "{id}")
+    public Person getPerson(@PathVariable("id") Long id) {
+        final Person person = personService.find(id);
         return person;
     }
 
+    @GetMapping
+    public List<Person> findAll() {
+        final List<Person> list = personService.findAll();
+        return list;
+    }
+
+    // 添加
     @PostMapping
     public Person postPerson(@RequestBody @Valid Person person) {
-        System.out.println(person);
+        person.setId(null);
+        System.out.println("要添加的：" + person);
+        personService.add(person);
         return person;
     }
-
-    @DeleteMapping("{id}")
-    public void delPerson(@PathVariable("id") Long id) {
-        System.out.println("=====================删除的id=" + id);
+    @PostMapping("/batch-add")
+    public List<Person> batchAdd(@RequestBody @Valid List<Person> list) {
+        personService.batchAdd(list);
+        return list;
     }
 
-    @PutMapping("{id}")
-    public Person putPerson(@RequestBody @Valid Person person, @PathVariable("id") Long id) {
-        person.setId(id);
-        System.out.println(person);
+    // 删除
+    @DeleteMapping("{ids}")
+    public Boolean delPerson(@PathVariable("ids") String ids) {
+        System.out.println("=====================删除的id=" + ids);
+        personService.del(ids);
+        return true;
+    }
+
+    // 修改
+    @PutMapping
+    public Person putPerson(@RequestBody @Valid Person person) {
+        System.out.println("要修改的内容：" + person);
+        personService.edit(person);
         return person;
     }
 
