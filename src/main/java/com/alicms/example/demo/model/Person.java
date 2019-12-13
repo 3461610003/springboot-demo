@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 /**
- * @Description TODO
+ * @Description Person实体
  * @Author zhenghao
  * @Date 2019/9/10 16:08
  */
