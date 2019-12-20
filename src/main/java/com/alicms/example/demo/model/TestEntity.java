@@ -1,13 +1,11 @@
 package com.alicms.example.demo.model;
 
-import lombok.Data;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @Description: TODO
+ * @Description:
  * @Author zhenghao
  * @Date 2019/11/28 15:15
  */

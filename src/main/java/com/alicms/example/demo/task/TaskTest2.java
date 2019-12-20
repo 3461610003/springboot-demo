@@ -4,18 +4,15 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.quartz.CronExpression;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 import org.springframework.scheduling.support.CronTrigger;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
 
 /**
- * @Description TODO
+ * @Description
  * @Author zhenghao
  * @Date 2019/8/29 14:28
  */
@@ -33,7 +30,7 @@ public class TaskTest2 implements SchedulingConfigurer {
     }
 
     @Resource      //注入mapper
-    CronMapper cronMapper;
+            CronMapper cronMapper;
 
     /**
      * 执行定时任务.
