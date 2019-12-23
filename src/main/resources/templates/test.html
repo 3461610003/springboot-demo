@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="http://localhost:8081/jsencrypt"></script>
+<script type="application/javascript">
+    function encrypt_pwd() {
+        var encrypt = new JSEncrypt();
+        encrypt.setPublicKey("MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAI-Wb4hC_PQIXqayCFM6oKoavXNJQmTmxPOeTt_LHzygCNKebU_4wQJbuNhE44vtCixL1ntsmZszjmwK4_SAFwkCAwEAAQ");
+        var encryptData  = encrypt.encrypt("123456");
+        alert(encryptData);
+        document.getElementById("show_en_pwd").value=encryptData
+    }
+</script>
+<body>
+    加密前<input type="text" id="btn"><button onclick="encrypt_pwd()">加密</button> <br />
+    加密后：<input type="text" id="show_en_pwd">
+</body>
+</html>

@@ -175,11 +175,11 @@ public class RSAUtils {
     }
 
     public static void main(String[] args) throws Exception {
-//        Map<String, String> keyMap = RSAUtils.createKeys(1024);
-//        String publicKey = keyMap.get("publicKey");
-//        String privateKey = keyMap.get("privateKey");
-        String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCp_Rrszn4fhRYsk_PedvvLwMT-dMAorzBzvsAMTX0aET53I-p9qdGlkB0d0U6fo_P7X1SbOgzZ4jVNgF0Xx_v40knoOPMKI00B5hb_S_GKeg7GREeEt4RRgGCjo9if3i5NABq9MubhuRwaitg2356W8tXoP34s9sk_CkA-jZWhwwIDAQAB";
-        String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKn9GuzOfh-FFiyT8952-8vAxP50wCivMHO-wAxNfRoRPncj6n2p0aWQHR3RTp-j8_tfVJs6DNniNU2AXRfH-_jSSeg48wojTQHmFv9L8Yp6DsZER4S3hFGAYKOj2J_eLk0AGr0y5uG5HBqK2Dbfnpby1eg_fiz2yT8KQD6NlaHDAgMBAAECgYB-d7YudDpVTPiAVdrbqf4PSu3Euiu0mRIdKs9K1-O5HxcwIGJ2937oBF4FLxGlp57_Z59UlU22VJt_e37HEJwe_VEK27CIVbucHtOgU0Ty0wJcz1n2qd1nce9k9sxZNRJ7FXXjNYQWJisn5h6a8kqZxPpm8y93CwXbcLAPBcrb4QJBAOFWcdcjgCVawhGBbAbl5GFFlp6vPDVVzhi2jjWSakXfKmkNn9PYg7uuObavGgmcvWgS6sL8BLOr209HQlKATckCQQDBHplV5TvP066iC4khtsfQs65szWAa1QH8TKR7kmn3N6TXwJdyXEDuy3C8b8G3KHtnelsysiJpH4TQznVZKIkrAkBzSYDw6y7S7b5AqpCUbuYLhkjrYwhQ2VeaeTwE2KYanXTbTqcpAatUSG0qtCeEJ3cYWiVWIQ5exlxsES8zeoVRAkEAsPQrxmQU6Trq8nqlfenwr5BlDDcnj46MkjVcJgqj5C3tcvB7FQPpT6XEODYjB4Qlh0y7UfmdxDtoRLhZGIgnHwJAf61XYlKwTF0kbAGQjf2m4jD0ZLvKlI3cRbQAZjohARxkzEqJI0mHg8dlvi5mJs6gObFdHVvq00iuwIy2Qz9x-Q";
+        Map<String, String> keyMap = RSAUtils.createKeys(512);
+        String publicKey = keyMap.get("publicKey");
+        String privateKey = keyMap.get("privateKey");
+//        String publicKey = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAI-Wb4hC_PQIXqayCFM6oKoavXNJQmTmxPOeTt_LHzygCNKebU_4wQJbuNhE44vtCixL1ntsmZszjmwK4_SAFwkCAwEAAQ";
+//        String privateKey = "MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAj5ZviEL89AheprIIUzqgqhq9c0lCZObE855O38sfPKAI0p5tT_jBAlu42ETji-0KLEvWe2yZmzOObArj9IAXCQIDAQABAkALLH3JcM0WgIA9IKWdNHbERghwLEdKatrwymUA7WGk6gA-qkTQjTFp5aNMqzhR5SMDPHZbv0Cr9bto5MTpcsIBAiEA_fyJyc9lpA6yINw0hxc2X2qQjcmC4Nd0qYu-sPGUTVECIQCQudg6jR-QP2fgjYGNyvpJKChuOysoCeZHh74ndJTgOQIhAMQTS8QyikMG3Vkk5qBLuTwcJpBvOsydSIEDUymCtnyhAiA11z2vAqNUaZI-gsZIttOH9c2cvJxgh9ZIlCJU0VU1WQIhAKkdj4GOH360MkVYbpH3Vaw7WWnrR4DIORxG_hhTN1SF";
         System.out.println("公钥:" + publicKey);
         System.out.println("私钥:" + privateKey);
 

@@ -24,4 +24,20 @@ public class IndexController {
         return "index";
     }
 
+
+    @RequestMapping("/test")
+    public String test() {
+        return "test";
+    }
+
+    @RequestMapping("/t2")
+    public String test2() {
+        return "test2";
+    }
+    @RequestMapping("/jsencrypt")
+    public String js() {
+        return "jsencrypt.js";
+    }
+
+
 }
