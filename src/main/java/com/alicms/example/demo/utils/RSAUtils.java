@@ -35,10 +35,11 @@ public class RSAUtils {
         KeyPair keyPair = kpg.generateKeyPair();
         //得到公钥
         Key publicKey = keyPair.getPublic();
-        String publicKeyStr = Base64.encodeBase64URLSafeString(publicKey.getEncoded());
+//        String publicKeyStr = Base64.encodeBase64URLSafeString(publicKey.getEncoded()); //使用safe编码的公钥前端不能使用
+        String publicKeyStr = Base64.encodeBase64String(publicKey.getEncoded());
         //得到私钥
         Key privateKey = keyPair.getPrivate();
-        String privateKeyStr = Base64.encodeBase64URLSafeString(privateKey.getEncoded());
+        String privateKeyStr = Base64.encodeBase64String(privateKey.getEncoded());
         Map<String, String> keyPairMap = new HashMap<>();
         keyPairMap.put("publicKey", publicKeyStr);
         keyPairMap.put("privateKey", privateKeyStr);
