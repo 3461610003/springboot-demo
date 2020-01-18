@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-// @Configuration
+@Configuration
 public class RedisConfig {
     private Logger logger = LoggerFactory.getLogger(RedisConfig.class);
 
@@ -40,6 +40,8 @@ public class RedisConfig {
     private int minIdle;
     @Value("${spring.redis.jedis.pool.max-wait}")
     private long maxWaitMillis;
+    @Value("${spring.redis.database}")
+    private int database;
 
     @Bean
     public JedisPool redisPoolFactory() {
@@ -48,7 +50,7 @@ public class RedisConfig {
         jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
         jedisPoolConfig.setMaxTotal(maxActive);
         jedisPoolConfig.setMinIdle(minIdle);
-        JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, password);
+        JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, password, database);
 
         logger.info("JedisPool注入成功！redis地址：" + host + ":" + port);
         return jedisPool;
