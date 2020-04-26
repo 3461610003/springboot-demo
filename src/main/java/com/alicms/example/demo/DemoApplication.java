@@ -3,13 +3,14 @@ package com.alicms.example.demo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @SpringBootApplication
 @MapperScan("com.alicms.example.demo.dao")
-//@EnableScheduling
+@EnableScheduling
 public class DemoApplication extends WebMvcConfigurationSupport {
 
     @Override

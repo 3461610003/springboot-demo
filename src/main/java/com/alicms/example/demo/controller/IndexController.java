@@ -1,7 +1,11 @@
 package com.alicms.example.demo.controller;
 
+import com.alicms.example.demo.service.TestService;
+import com.alicms.example.demo.utils.AppUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,6 +25,14 @@ public class IndexController {
 //        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
 //        response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
 //        response.setHeader("Access-Control-Max-Age", "3600");
+        JedisPool jedisPool = AppUtils.getBean(JedisPool.class);
+        Jedis jedis = jedisPool.getResource();
+        String res = jedis.set("key1", "hello --- world");
+        System.out.println(res);
+        System.out.println(jedis.get("key1"));
+//        TestService testService = AppUtils.getBean(TestServiceImpl.class);
+        TestService testService = (TestService) AppUtils.getObject("testServiceImpl");
+        testService.test();
         return "index";
     }
 
