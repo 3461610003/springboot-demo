@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @Description: 第二种:过滤器
- * @Author zhenghao
- * @Date 2019/12/9 16:20
+ * @description 第二种:过滤器
+ * @author zhenghao
+ * @date 2019/12/9 16:20
  */
 //@WebFilter(filterName = "CorsFilter ")
 //@Configuration

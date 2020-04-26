@@ -7,7 +7,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-
+/**
+ * @description redis配置
+ * @author zhenghao
+ * @date 2020/4/26 16:29
+ */
 @Configuration
 public class RedisConfig {
     private Logger logger = LoggerFactory.getLogger(RedisConfig.class);

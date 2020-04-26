@@ -10,9 +10,9 @@ import redis.clients.jedis.JedisPool;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @Description: 跨域请求测试
- * @Author zhenghao
- * @Date 2019/12/9 15:15
+ * @description 跨域请求测试
+ * @author zhenghao
+ * @date 2019/12/9 15:15
  */
 @Controller
 public class IndexController {

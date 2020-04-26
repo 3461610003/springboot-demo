@@ -8,9 +8,9 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 /**
- * @Description HttpClientUtils
- * @Author zhenghao
- * @Date 2019/12/26 11:01
+ * @description HttpClientUtils
+ * @author zhenghao
+ * @date 2019/12/26 11:01
  */
 @Slf4j
 public class HttpClientUtils {

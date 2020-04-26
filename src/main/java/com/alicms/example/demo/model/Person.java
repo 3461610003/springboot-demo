@@ -6,9 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 /**
- * @Description Person实体
- * @Author zhenghao
- * @Date 2019/9/10 16:08
+ * @description Person实体
+ * @author zhenghao
+ * @date 2019/9/10 16:08
  */
 @Data
 @Entity

@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Description:
- * @Author zhenghao
- * @Date 2019/11/28 15:15
+ * @description
+ * @author zhenghao
+ * @date 2019/11/28 15:15
  */
 //@Data
 public class TestEntity<T> {

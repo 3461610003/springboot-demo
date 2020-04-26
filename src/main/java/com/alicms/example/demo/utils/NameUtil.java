@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @Description: 姓名操作类
- * @Author zhenghao
- * @Date 2019/12/19 10:23
+ * @description 姓名操作类
+ * @author zhenghao
+ * @date 2019/12/19 10:23
  */
 public class NameUtil {
     public static void main(String[] args) {

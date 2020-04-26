@@ -12,9 +12,9 @@ import javax.annotation.Resource;
 import java.time.LocalDateTime;
 
 /**
- * @Description
- * @Author zhenghao
- * @Date 2019/8/29 14:28
+ * @description
+ * @author zhenghao
+ * @date 2019/8/29 14:28
  */
 //@Component
 //@Configuration      //1.主要用于标记配置类，兼备Component的效果。

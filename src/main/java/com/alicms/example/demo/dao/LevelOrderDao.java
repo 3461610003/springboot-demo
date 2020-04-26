@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Description:
- * @Author zhenghao
- * @Date 2019/10/18
+ * @description
+ * @author zhenghao
+ * @date 2019/10/18
  */
 @Repository
 public interface LevelOrderDao extends JpaRepository<LevelOrder, Integer> {

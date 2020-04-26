@@ -5,10 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 /**
- * Description:用户Entity
+ * @description 用户Entity
  *
- * @Author: shaoqiping
- * @Date: 2018/8/15 08:51
+ * @author shaoqiping
+ * @date 2018/8/15 08:51
  */
 @Entity
 @Table(name = "alicms_user")

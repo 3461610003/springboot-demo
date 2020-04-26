@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Description:基础类
+ * @description 基础类
  */
 @Data
 public class BaseEntity implements Serializable{

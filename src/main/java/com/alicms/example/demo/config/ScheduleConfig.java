@@ -7,10 +7,9 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 import java.util.concurrent.Executors;
 
 /**
- * Description:
- *
- * @Author: my.miao
- * @Date: 2019/5/5 18:07
+ * @description 定时任务配置
+ * @author zhenghao
+ * @date 2020/4/26 16:28
  */
 @Configuration
 public class ScheduleConfig implements SchedulingConfigurer {

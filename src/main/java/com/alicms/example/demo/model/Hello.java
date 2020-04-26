@@ -6,9 +6,9 @@ import lombok.EqualsAndHashCode;
 import java.io.Serializable;
 
 /**
- * @Description: 测试@EqualsAndHashCode类
- * @Author zhenghao
- * @Date 2019/12/20 9:20
+ * @description 测试@EqualsAndHashCode类
+ * @author zhenghao
+ * @date 2019/12/20 9:20
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

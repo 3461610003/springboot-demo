@@ -8,10 +8,8 @@ import java.io.IOException;
 import java.util.zip.*;
 
 /**
- * Description:
- *
- * @Author: my.miao
- * @Date: 2019/8/28 17:36
+ * @description
+ * @date 2019/8/28 17:36
  */
 public class ZipUtil {
     /**
@@ -101,7 +99,7 @@ public class ZipUtil {
      * @return 返回压缩后的文本
      */
     @SuppressWarnings("restriction")
-    public static final String zip(String str) {
+    public static String zip(String str) {
         if (str == null)
             return null;
         byte[] compressed;
@@ -141,7 +139,7 @@ public class ZipUtil {
      * @return 解压后的字符串
      */
     @SuppressWarnings("restriction")
-    public static final String unzip(String compressedStr) {
+    public static String unzip(String compressedStr) {
         if (compressedStr == null) {
             return null;
         }

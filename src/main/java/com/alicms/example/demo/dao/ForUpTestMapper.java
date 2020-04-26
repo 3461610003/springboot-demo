@@ -5,9 +5,9 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 /**
- * @Description
- * @Author zhenghao
- * @Date 2019/9/10 16:38
+ * @description
+ * @author zhenghao
+ * @date 2019/9/10 16:38
  */
 @Mapper
 public interface ForUpTestMapper {

@@ -14,9 +14,9 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 
 /**
- * @Description 执行静态定时任务
- * @Author zhenghao
- * @Date 2019/8/29 14:06
+ * @description 执行静态定时任务
+ * @author zhenghao
+ * @date 2019/8/29 14:06
  */
 //@Component
 @Configuration      //1.主要用于标记配置类，兼备Component的效果。

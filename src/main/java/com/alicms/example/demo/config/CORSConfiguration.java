@@ -5,9 +5,9 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 /**
- * @Description: 跨域请求解决：第一种
- * @Author zhenghao
- * @Date 2019/12/9 16:01
+ * @description 跨域请求解决：第一种
+ * @author zhenghao
+ * @date 2019/12/9 16:01
  */
 @Configuration
 public class CORSConfiguration extends WebMvcConfigurationSupport {
