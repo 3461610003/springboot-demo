@@ -1,18 +1,18 @@
 package com.alicms.example.demo;
 
-import com.rabbitmq.client.UnblockedCallback;
+import com.alicms.example.demo.model.Hello;
 
 import java.util.*;
 import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * @Description:
- * @Author zhenghao
- * @Date 2019/12/19 17:19
+ * @description
+ * @author zhenghao
+ * @date 2019/12/19 17:19
  */
 public class Jdk8NewTest {
 
@@ -96,5 +96,17 @@ public class Jdk8NewTest {
         Map<Integer, Long> map = stream.collect(Collectors.groupingBy(i -> i, Collectors.counting()));
         System.out.println(map);
 
+    }
+
+    public void finalTest() {
+        AtomicReference<Hello> hello = new AtomicReference<>(new Hello());
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.forEach(e -> {
+            System.out.println(e);
+            hello.get().setIdCard(e);
+            hello.set(new Hello());
+        });
     }
 }
