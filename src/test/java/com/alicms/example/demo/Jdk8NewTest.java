@@ -28,6 +28,7 @@ public class Jdk8NewTest {
 
     public static void main(String[] args) throws Exception {
         t3();
+        // new ArrayList<String>().stream().forEach(x -> System.out.println("x:" + x));
     }
 
     // lambda表达式
@@ -182,7 +183,7 @@ public class Jdk8NewTest {
         // 串行排序和并行排序对比
 //        tt();
         // 测试for、迭代器、stream性能
-        streamAndForTest(8 * 1000 * 1000);
+        streamAndForTest(8 * 1000 * 10);
     }
 
     private static void t300() {
