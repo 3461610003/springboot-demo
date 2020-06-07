@@ -316,7 +316,7 @@ public class HttpClientUtils {
         BufferedInputStream in = null;
         BufferedOutputStream out = null;
         in = new BufferedInputStream(is);
-        File file = new File("file/ts/" + fileName);
+        File file = new File("C:\\Users\\anchorite\\Desktop\\file\\ts\\" + fileName);
         File parentFile = file.getParentFile();
         if (!parentFile.exists()) {
             parentFile.mkdirs();
