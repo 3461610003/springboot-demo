@@ -245,7 +245,7 @@ public class HttpClientUtils {
         return result;
     }
 
-    public static boolean doGetFile(String httpurl, Map<String, String> header, String path) {
+    public static boolean doGetFile(String httpurl, Map<String, String> header, String srcPath) {
         HttpURLConnection connection = null;
         InputStream is = null;
         BufferedReader br = null;
@@ -272,7 +272,7 @@ public class HttpClientUtils {
             // 通过connection连接，获取输入流
             if (connection.getResponseCode() == 200) {
                 is = connection.getInputStream();
-                getFile(is, path + httpurl.substring(httpurl.lastIndexOf("/")));
+                getFile(is, srcPath + httpurl.substring(httpurl.lastIndexOf("/")));
                 result = true;
             } else {
                 System.out.println("请求失败" + connection.getResponseCode());
@@ -312,11 +312,78 @@ public class HttpClientUtils {
         return result;
     }
 
+    public static boolean doGetFileByName(String httpurl, Map<String, String> header, String fileName) {
+        HttpURLConnection connection = null;
+        InputStream is = null;
+        BufferedReader br = null;
+        boolean result = false;
+        try {
+            // 创建远程url连接对象
+            URL url = new URL(httpurl);
+            // 通过远程url连接对象打开一个连接，强转成httpURLConnection类
+            connection = (HttpURLConnection) url.openConnection();
+            // 设置连接方式：get
+            connection.setRequestMethod("GET");
+            // 设置连接主机服务器的超时时间：15000毫秒
+            connection.setConnectTimeout(15000);
+            // 设置读取远程返回的数据时间：60000毫秒
+            connection.setReadTimeout(60000);
+//            connection.setRequestProperty("Accept", "*/*");
+            if (header != null && header.size() > 0) {
+                for (String key : header.keySet()) {
+                    connection.setRequestProperty(key, header.get(key));
+                }
+            }
+            // 发送请求
+            connection.connect();
+            // 通过connection连接，获取输入流
+            if (connection.getResponseCode() == 200) {
+                is = connection.getInputStream();
+                getFile(is, fileName);
+                result = true;
+            } else {
+                System.out.println("请求失败" + connection.getResponseCode());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+//            try {
+//                if (connection != null) {
+//                    log.info("get请求：{}, 请求结果:{}", httpurl, connection.getResponseCode());
+//                }
+//            } catch (IOException e) {
+//                log.info("get请求：{}, 请求结果:{}", httpurl, connection);
+//                e.printStackTrace();
+//            }
+            // 关闭资源
+            if (null != br) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (null != is) {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            if (connection != null) {
+                connection.disconnect();// 关闭远程连接
+            }
+        }
+        return result;
+    }
+
     public static void getFile(InputStream is, String fileName) throws IOException {
         BufferedInputStream in = null;
         BufferedOutputStream out = null;
         in = new BufferedInputStream(is);
-        File file = new File("C:\\Users\\anchorite\\Desktop\\file\\ts\\" + fileName);
+        File file = new File(fileName);
         File parentFile = file.getParentFile();
         if (!parentFile.exists()) {
             parentFile.mkdirs();
