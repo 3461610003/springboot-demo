@@ -61,9 +61,12 @@ public class DownloadFileTest {
 //        paramMap.put("35", Arrays.asList("https://res001.geekbang.org//media/audio/07/c0/07f593c7a0cf0e1ce8ddab21b56528c0/ld/ld-", "加餐5 分析定位Java问题，一定要用好这些工具（二）"));
 //        paramMap.put("36", Arrays.asList("https://res001.geekbang.org//media/audio/70/0c/7045230e84b0712f43b28fbbe2c3b30c/ld/ld-", "加餐6 这15年来，我是如何在工作中学习技术和英语的？"));
 //        paramMap.put("37", Arrays.asList("https://res001.geekbang.org//media/audio/d5/03/d588e7fe05c091169ef75ad7c850fc03/ld/ld-", "结束语 写代码时，如何才能尽量避免踩坑？"));
-        paramMap.put("38", Arrays.asList("https://res001.geekbang.org/media/audio/16/37/16c4b2767808fa598853e7d5877f9637/ld/ld-", "答疑篇：代码篇思考题集锦（一）"));
-        paramMap.put("39", Arrays.asList("https://res001.geekbang.org/media/audio/20/f8/20ff92d160e92fb43de58a4d197d00f8/ld/ld-", "答疑篇：代码篇思考题集锦（二）"));
-        paramMap.put("40", Arrays.asList("https://res001.geekbang.org/media/audio/47/92/47d7c5a60208e19a8d718e56c11d7292/ld/ld-", "答疑篇：代码篇思考题集锦（三）"));
+//        paramMap.put("38", Arrays.asList("https://res001.geekbang.org/media/audio/16/37/16c4b2767808fa598853e7d5877f9637/ld/ld-", "答疑篇1：代码篇思考题集锦（一）"));
+//        paramMap.put("39", Arrays.asList("https://res001.geekbang.org/media/audio/20/f8/20ff92d160e92fb43de58a4d197d00f8/ld/ld-", "答疑篇2：代码篇思考题集锦（二）"));
+//        paramMap.put("40", Arrays.asList("https://res001.geekbang.org/media/audio/47/92/47d7c5a60208e19a8d718e56c11d7292/ld/ld-", "答疑篇3：代码篇思考题集锦（三）"));
+        paramMap.put("41", Arrays.asList("https://res001.geekbang.org/media/audio/d2/8a/d24c6131ca3286dc01e105d808a0078a/ld/ld-", "答疑篇4：设计篇思考题答案合集"));
+        paramMap.put("42", Arrays.asList("https://res001.geekbang.org/media/audio/30/d9/304913fee45ec6b5390af039b20fccd9/ld/ld-", "答疑篇5：安全篇思考题答案合集"));
+        paramMap.put("43", Arrays.asList("https://res001.geekbang.org/media/audio/8d/db/8d3847da3b36e5c590f376694eda7bdb/ld/ld-", "答疑篇6：加餐篇思考题答案合集"));
 
         String srcPath = "C:\\Users\\34616\\Desktop\\Java业务开发常见错误100例\\6-答疑篇\\ts\\";
         String desPath = "C:\\Users\\34616\\Desktop\\Java业务开发常见错误100例\\6-答疑篇\\merge\\";
@@ -117,9 +120,15 @@ public class DownloadFileTest {
         //合并
         File f = new File(srcPath);
         File[] fs = f.listFiles();
-        for (File file : fs) {
-            System.out.println(file);
+//        for (File file : fs) {
+//            System.out.println(file.getName());
+//        }
+
+        File desPathFile = new File(desPath);
+        if (!desPathFile.exists()) {
+            desPathFile.mkdirs();
         }
+
         // 10 集合类：坑满地的List列表操作.ts
         merge(fs, new File(desPath + newFileName + ".ts"));
     }
@@ -130,10 +139,6 @@ public class DownloadFileTest {
      * @param newFile 合并后的文件
      */
     public static void merge(File[] fs, File newFile) {
-        if (!newFile.exists()) {
-            newFile.mkdirs();
-        }
-
         int len = 0;
         for (File file : fs) {
             len += file.length();
@@ -162,6 +167,7 @@ public class DownloadFileTest {
                 e.printStackTrace();
             }
         }
+        System.out.println("合并文件：" + newFile);
     }
 
     // 拆分文件
