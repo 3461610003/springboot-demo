@@ -24,9 +24,9 @@ import java.util.Scanner;
 public class StepNumTest {
     public static void main(String[] args) {
         String accessToken= "D2A6AFB93531605DBE56DC2EEE74C4C9C7B227AD040AB9F11531814553FC1853CD9FF053B7E076ECBD015F9E74719EBBB4A498A63FF97A1464DC09E74E8F34AA17FD1B8256860C89F935AC12C80100035B45BF92669D4EA4939FB7853FEE4CCA.8A5B3D7981000DB4449E60E85CE2735E3124914FFACB72F95DD537A5CFDB7877";
-        String userId = "27231098";
-        String account = "15090508234";
-        String password = "654321";
+        String userId = "1";
+        String account = "";
+        String password = "";
         int step = 35212;
         String accessTokenTemp = scanner("请输入accessToken");
         if (isNotBlank(accessTokenTemp)) {
@@ -64,7 +64,7 @@ public class StepNumTest {
 
     private static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(tip + "：");
+        System.out.println(tip + "（输入0/n/no表示不输入取默认值）：");
         if (scanner.hasNext()) {
             return scanner.next();
         }
@@ -77,9 +77,9 @@ public class StepNumTest {
         if (isSuccess(loginJson)) {
             String accessToken = loginJson.getString("accessToken");
             String userId = loginJson.getString("userId");
-            System.out.println("==============【登录成功】============================================");
+            System.out.println("==============【登录成功】请记住以下信息，用于同步步数（无需重复登录）====");
             System.out.println("accessToken=" + accessToken + "\nuserId=" + userId);
-            System.out.println("==============【登录成功】============================================");
+            System.out.println("==============【登录成功】=============================================");
             JSONObject updateJson = JSONObject.parseObject(update(accessToken, userId, step));
             if (isSuccess(updateJson)) {
                 System.out.println("==============【同步步数成功】result=" + updateJson);
@@ -90,8 +90,7 @@ public class StepNumTest {
         } else {
             System.out.println("==============【重新登录失败】---------");
         }
-        String next = scanner("是否继续重试？0/n/N=否，1/y/Y=是");
-        if ("1".equals(next) || "y".equals(next) || "Y".equals(next)) {
+        if (isNotBlank(scanner("是否继续重试？0/n/N=否，1/y/Y=是"))) {
             reUpdate(account, password, step);
         }
     }
