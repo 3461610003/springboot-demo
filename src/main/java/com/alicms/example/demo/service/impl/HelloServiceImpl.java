@@ -28,7 +28,10 @@ public class HelloServiceImpl implements HelloService {
 
     @Override
     public String sayHello() {
-        return "hello:" + helloMapper.getCron() + ":" + df.format(new Date());
+//        return "hello:" + helloMapper.getCron() + ":" + df.format(new Date());
+        String result = "hello ..." + df.format(new Date());
+        System.out.println(result);
+        return result;
     }
 
     @Override
@@ -45,6 +48,7 @@ public class HelloServiceImpl implements HelloService {
     public static void main(String[] args) {
         System.out.println(new Object() instanceof Class);
         System.out.println(new Object().getClass() instanceof Class);
-        System.out.println(new Integer(1) instanceof Object);
+        System.out.println(Object.class instanceof Object);
+        System.out.println((Integer)1 instanceof Object);
     }
 }

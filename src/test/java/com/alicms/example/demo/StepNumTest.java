@@ -24,9 +24,9 @@ import java.util.Scanner;
 public class StepNumTest {
     public static void main(String[] args) {
         String accessToken= "D2A6AFB93531605DBE56DC2EEE74C4C9C7B227AD040AB9F11531814553FC1853CD9FF053B7E076ECBD015F9E74719EBBB4A498A63FF97A1464DC09E74E8F34AA17FD1B8256860C89F935AC12C80100035B45BF92669D4EA4939FB7853FEE4CCA.8A5B3D7981000DB4449E60E85CE2735E3124914FFACB72F95DD537A5CFDB7877";
-        String userId = "1";
-        String account = "";
-        String password = "";
+        String userId = "27231098";
+        String account = "15090508234";
+        String password = "654321";
         int step = 35212;
         String accessTokenTemp = scanner("请输入accessToken");
         if (isNotBlank(accessTokenTemp)) {
