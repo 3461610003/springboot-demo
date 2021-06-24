@@ -84,7 +84,7 @@ public class TempEmailTest {
                     String msgStr = HttpClientUtil.doPostJson("https://smailpro.com/app/email/inbox/" + jsonObject.getString("mid"), param, header);
                     // {"code":200,"msg":"OK","items":"\u60a8\u672c\u6b21\u64cd\u4f5c\u7684\u9a8c\u8bc1\u7801\u4e3a <b>599746<\/b>\uff0c\u6709\u6548\u671f30\u5206\u949f\uff0c\u8bf7\u52ff\u6cc4\u9732\u7ed9\u4ed6\u4eba\uff0c\u5982\u975e\u672c\u4eba\u64cd\u4f5c\uff0c\u8bf7\u5ffd\u7565!"}
                     String items = JSON.parseObject(msgStr).getString("items");
-                    String pattern = "\\d{6}";
+                    String pattern = "\\d{4,10}";
                     // 创建 Pattern 对象
                     Pattern r = Pattern.compile(pattern);
                     // 现在创建 matcher 对象
