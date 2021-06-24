@@ -2,6 +2,7 @@ package com.alicms.example.demo.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Tolerate;
 
 /**
  * @author zhenghao
@@ -11,6 +12,8 @@ import lombok.Data;
 @Data
 @Builder
 public class BuilderTest {
+    @Tolerate // @Builder允许使用此方法
+    public BuilderTest(){}
     private Integer code;
     private String error;
     private String message;
