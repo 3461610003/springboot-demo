@@ -1,8 +1,5 @@
 package com.alicms.example.demo.blockchain.tron.utils;
 
-import org.tron.common.utils.ByteArray;
-import org.tron.common.crypto.Hash;
-
 /**
  * @author: sunlight
  * @date: 2020/9/17 17:36
@@ -27,7 +24,8 @@ public class Trc20DataDecoder {
     }
 
     private static String encodeMethod(Trc20Method trc20Method){
-        return ByteArray.toHexString(Hash.sha3(trc20Method.getMethod().getBytes())).substring(0,8);
+//        return ByteArray.toHexString(Hash.sha3(trc20Method.getMethod().getBytes())).substring(0,8);
+        return null;
     }
 
     public static void main(String[] args) {

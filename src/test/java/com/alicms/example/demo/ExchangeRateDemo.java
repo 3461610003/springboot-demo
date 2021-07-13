@@ -1,8 +1,7 @@
-package com.alicms.example.demo.baidu;
+package com.alicms.example.demo;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.alicms.example.demo.utils.HttpClientUtil;
 
 import java.math.BigDecimal;
@@ -12,7 +11,7 @@ import java.math.BigDecimal;
  * @description 请求
  * @date 2020/7/13 17:05
  */
-public class TestRequestDemo {
+public class ExchangeRateDemo {
 
     public static void main(String[] args) {
         String result = HttpClientUtil.doGet("http://www.safe.gov.cn/AppStructured/hlw/jsonRmb.do", null);

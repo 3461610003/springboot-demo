@@ -5,8 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.alicms.example.demo.blockchain.tron.utils.TransferMessage;
 import com.alicms.example.demo.blockchain.tron.utils.Trc20DataDecoder;
 import com.alicms.example.demo.utils.HttpClientUtil;
-import org.tron.common.utils.ByteArray;
-import org.tron.walletserver.WalletApi;
 
 
 public class DemoTest {
@@ -65,11 +63,11 @@ public class DemoTest {
         }
 
 //        // 调用者地址
-        String owner_address = rowDataContractParameterValue.getString("owner_address");
-        owner_address = WalletApi.encode58Check(ByteArray.fromHexString(owner_address));
+//        String owner_address = rowDataContractParameterValue.getString("owner_address");
+//        owner_address = WalletApi.encode58Check(ByteArray.fromHexString(owner_address));
         // 合约地址
-        String contract_address = rowDataContractParameterValue.getString("contract_address");
-        contract_address = WalletApi.encode58Check(ByteArray.fromHexString(contract_address));
+//        String contract_address = rowDataContractParameterValue.getString("contract_address");
+//        contract_address = WalletApi.encode58Check(ByteArray.fromHexString(contract_address));
 //        if (!"TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t".equals(contract_address)) {
 //            return;
 //        }
@@ -94,7 +92,7 @@ public class DemoTest {
 //        System.out.println("fromAddress=" + owner_address + ", toAddress=" + bo.getTo() + ", amount=" + bo.getValue());
         if (bo == null) {
             System.out.print("txID=" + parseObject.getString("txID"));
-            System.out.println(", data=" + data + ", contract_address=" + contract_address);
+//            System.out.println(", data=" + data + ", contract_address=" + contract_address);
             return;
         }
         if (bo.getTo() == null || !bo.getTo().startsWith("T") || bo.getTo().length() != 34) {

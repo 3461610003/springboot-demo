@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @author zhenghao
- * @description TODO
+ * @description map参数集合与url参数相互转换
  * @date 2020/7/11 14:26
  */
 public class MapUrlUtil {

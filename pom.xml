@@ -131,13 +131,13 @@
             <version>0.0.39</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.alipay</groupId>
             <artifactId>wallet-sdk-java</artifactId>
             <version>4.0</version>
             <scope>system</scope>
             <systemPath>D:/workspace/file/wallet-4.0.jar</systemPath>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
