@@ -1,5 +1,6 @@
 package com.alicms.example.demo.ok_test;
 
+import com.alicms.example.demo.utils.HttpClientUtil;
 import com.alicms.example.demo.utils.HttpClientUtils;
 import org.apache.commons.codec.binary.Base64;
 
@@ -7,9 +8,36 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class AccessTest {
     public static void main(String[] args) {
+        Runnable runnable = () -> {
+            for (int i = 10; i < 2000; i++) {
+                int t = new Random().nextInt(2 * i);
+                long startTime = 1625056873819L + t;
+                long endTime = 1625056933925L + t;
+                // api.trongrid.io
+                // apiasia.tronscan.io
+                String result = HttpClientUtil.doGet("https://api.trongrid.io/api/token_trc20/transfers?start=20&limit=40&contract_address=TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t&start_timestamp=" + startTime + "&end_timestamp=" + endTime,
+                        new HashMap<>());
+                if (!result.startsWith("{")) {
+                    System.out.println(result);
+                }
+            }
+        };
+        new Thread(runnable).start();
+        new Thread(runnable).start();
+        new Thread(runnable).start();
+        new Thread(runnable).start();
+        new Thread(runnable).start();
+//        new Thread(runnable).start();
+//        new Thread(runnable).start();
+//        new Thread(runnable).start();
+//        new Thread(runnable).start();
+    }
+
+    public static void main2(String[] args) {
         String timestamp = System.currentTimeMillis() + "";
         Map<String, String> header = new HashMap<>();
         // 字符串类型的APIKey

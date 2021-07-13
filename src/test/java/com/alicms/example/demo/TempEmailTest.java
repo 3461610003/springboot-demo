@@ -19,19 +19,22 @@ import java.util.regex.Pattern;
  * @date 2021/6/24 10:45
  */
 public class TempEmailTest {
-    private static final String COOKIE = "_gid=GA1.2.1832434.1624520045; XSRF-TOKEN=eyJpdiI6InlvUU5YS0ZGMERteUdaeTJaYVdpVnc9PSIsInZhbHVlIjoiQVFKd3pSZWY1VDR5K0lKMXJWeStpMmFwd0NldTYzdU9kdUhWaFhVUEpUdW1VZ2dnY1VOQUhka0hNdDJzdVNoOTVuRGpacmMwb3ZFNnRQTkNmWkdzYkhSZjM1Nnh1eU45UmxUQVVYWnNId2NQbVVVSnoyNURnYmVLVFk3NFJUWFkiLCJtYWMiOiI3MjRlNTEzNzNjZjdlN2IyN2E4YmY0NDM3ZjY1NjliNjQyMjRiZGQwNWEzOWYzYTc0NTJkODJkZTJkNjQ5Yzg4In0%3D; smailpro_session=eyJpdiI6ImQrbFZlTmxKcktJdWF2cFpkVFdCS2c9PSIsInZhbHVlIjoiY2lEZW9kYkt2RCtOQXk2cHlSMUtkc3d5UkpuYlB3YTl6TFFqMWF0K2M3V2xDMGMzdFF3Qmc4STJJZ0FGbFhtcE9mV0NnOU1pV3BoMytBb2NCdnZRNU9jbjZwa1QxK0JISlVid2FSWjFZVDlYV3JOT1pScDduRTNJZ3A5ZnVBelwvIiwibWFjIjoiZTQ2MGJiMzcxN2IzOGZlZjY3MThmMTQ3NWI2ODJkMWRiZDE3MGNiNDg4MzEwODk2ZGMyMmQzNDcwMmM5YjMyNSJ9; q69Fc1Wc8cmVo9QgEtwQOUYaxyI8oqxq3Fcs6esR=eyJpdiI6IjZtYXVvWW82MmxvTXdHM0YyeFBMUmc9PSIsInZhbHVlIjoic0c0OXhVN0UrYTVkcEI5RjVjWmlEZVM2ODFDcDFEZ01oaXl4SE5iOXlFZUZxTVVUUlluN3R0U3FSWWhRaDVTQmpmTzJTd1NZeHczYU50VzdOTHhrbCtYdjM2WW9mREtiTzErdk5tblJCZVNhYUI4TUdYNkpOSlNyenNTVzlITEJyZ2pJSnhhejBVKzNQdEpzY0RoemRydnEyN0VmY3BuU2FGd2VpR0NkTnY2aGVQZDE4a0cxcjFLaTdueEJCRHJNVGNLV3ZaOUVGZDRmd1ZTbmlKY2tXcWFhTWtcL3p0NytaYTlrQ1Y2aDJBa3BPTDdNUzE1VHU5NTc5dHQzOFNRUWVqM3J4dmUzZFdxRUkxK2dCcnlEaEZzb3JEVDJ4XC9GS3FpdlRXelVIUnRpNTZ0NTZQVkZtcVpEbU1iaFRBakloYkswTFlqMjhRdEthdUVkbXN1VW1LMnJhbEtzWlllSjRDbThRczgyYW5rRXRVZjEwa2I2TFNMRjNKVjR0am0zTHIiLCJtYWMiOiI5ZjJlMjBhYTAzODk4OGVhMjllNTE4YWM0YjM3MzI1N2Q0NjMwNjhjNDFiZThjOTljZDZmYWJmMzc2MThlY2U1In0%3D; _ga_GSFQ1G81R7=GS1.1.1624520043.10.1.1624520186.0; _ga=GA1.2.1388413368.1624520045; _gat_gtag_UA_145345867_1=1";
-    private static final String X_XSRF_TOKEN = "eyJpdiI6InlvUU5YS0ZGMERteUdaeTJaYVdpVnc9PSIsInZhbHVlIjoiQVFKd3pSZWY1VDR5K0lKMXJWeStpMmFwd0NldTYzdU9kdUhWaFhVUEpUdW1VZ2dnY1VOQUhka0hNdDJzdVNoOTVuRGpacmMwb3ZFNnRQTkNmWkdzYkhSZjM1Nnh1eU45UmxUQVVYWnNId2NQbVVVSnoyNURnYmVLVFk3NFJUWFkiLCJtYWMiOiI3MjRlNTEzNzNjZjdlN2IyN2E4YmY0NDM3ZjY1NjliNjQyMjRiZGQwNWEzOWYzYTc0NTJkODJkZTJkNjQ5Yzg4In0=";
+    private static final String COOKIE = "_gid=GA1.2.1854663686.1624846183; _pbjs_userid_consent_data=3524755945110770; __gads=ID=6070e2f7c4fbc4bd-22b9135f07ca007e:T=1624846183:S=ALNI_MbPL-GL-ceyg-FnK3jw7V_dYgcIbg; _gat_gtag_UA_128776493_30=1; XSRF-TOKEN=eyJpdiI6IkRmenpyZzNWWEdCS2JMY1dSb3E4bnc9PSIsInZhbHVlIjoiVU9Vdm5Dc29IQlkzTTlZUDBkOEtyTlRHQTVvK1wvM0dUTGYyZXZcL3NQN2YxbnNmaTBwV2Y2OXRsXC9ubWtTeEpVWkdubm9QYmNIVWFzT29RUm9tMkhEZllFazVGZHAyeVZxNnBjelJteFRUTFVvdEdoeEZGbFwvVGVsQXhEVldRZ3NhIiwibWFjIjoiNjlmYzcwZGU2MjcxNTFmNTQ4MGM5ZDIwNDVkNzIzOTJjNTRiNzc1ZTNmNjFmMWFkOWRiYWY3ODlmYWEyODU2YyJ9; smailpro_session=eyJpdiI6IlZzZzNpMnUzUlVLcDcwQzZjZFlpdWc9PSIsInZhbHVlIjoiRVBuT1F3cHgzTHRsVjBONHdZeEw2OUlucW5nRFd0dHU3OTRFSVBFekRDQjc3TXpyWkkzSEp1bmZ5aFBWamtmSENndnNJaG13ak5ueU5TUnE3aGIxbEI4MU41Qk1SRk93K3FhckNwWVwvVTYxRUIxUEtSc2Frc0tvRnQ1OTgzdFwvciIsIm1hYyI6IjVlYTY5ZTUxMGRjM2E0OTc5NTkwZTgxMmYwZThlZmEyNTQ4N2E0M2U3MGU1ODY4NDQ0NzgwMDNlNDJiOTAyYmEifQ%3D%3D; Oorp9BjYh3YqA3kvTtxio5BpV2uHo05ezAqsePXc=eyJpdiI6InhCQzlmR1IxMmpBeEhaSmhORDBaeFE9PSIsInZhbHVlIjoiclhieFhDWGV2ZFg3a2hnYXJHQjh3dTMxTnlSdWNDRjdXXC9sdlBwNVJBKzY5ZVhXRFExVmhKam9adGZBTFc2YWQwVEhsMEExbDFcLzljRXBSUHpHOHhZMHV4V2tsXC8yemlLMlF4WFV0NXkrdWdiblRMeklEN3ZnZTc5VW0xVzZTWTRiWkdRd0YzMnExWmVNZjhjcmdRZllmNUpNUXhuNllPUWZlMGliaUtYZ1o4MlNIa21hYUZ0YVIzQlV6eHdxVkJ1cHQwM1lrbUtWMHVzNmhhZFwvdFlwYTdwcXVsVCtFeU9TbXB6S1dYa3pPdlY3S0M4d2x5T0RPQndtbDJKeEVmajdwcWE0clFLcXowRkdsTVwvaExHV1hmT2sxd0llUk1MMEJYamJvb05RcUU1QUVWKzZxZWF6UU01RjNNb0F5ZWhZR2NlTGhyZkFRYTIxV2tITG1CM25IdFBqcXN1dVphMFhTMGFvWG4wYzd4SjROYmhiazA0NGxBVWJDWXhkbGF3YjgiLCJtYWMiOiJjMmZkNjJkN2YyMGZkMDdiNGRmNzAzYTVhNjcwMjdjYTdkNThmYmQwZjZmNzdhMDdmYWUxM2UzZGM0NmRjYWY1In0%3D; _ga_GSFQ1G81R7=GS1.1.1624846182.1.1.1624846258.0; _ga=GA1.2.801691743.1624846183; _gat_gtag_UA_145345867_1=1; cto_bidid=Q6EkU19vdDJMJTJCV255SzJjS1YzMGRqQTRPZUlMQlpzUEJFRVE4NmFUNFFSdkdaNm5vSDdOVHIzeTFFSXNISGtGOVcyd09CcHlsVFByREFuNmVYYWFPaFNFSVNRJTNEJTNE; cto_bundle=FV1o0l9TcDFObEZOQUhFckMxR0RIUnY1MGh4SWF4SXhTcVElMkZ3a2F1eWxmMmR5V1lic2RWWVlXblU0WVJFVFk5d3ZkWnNtUlFOQ2RrQWNFd1VzSll4UUZIbERjUVNkelJUOXZOOHZxYlQ0MUZOa1dnJTJGalJWU2kxd3BjJTJCWVFQRFBiWDdCZA; __viCookieActive=true";
+    private static final String X_XSRF_TOKEN = "eyJpdiI6IkRmenpyZzNWWEdCS2JMY1dSb3E4bnc9PSIsInZhbHVlIjoiVU9Vdm5Dc29IQlkzTTlZUDBkOEtyTlRHQTVvK1wvM0dUTGYyZXZcL3NQN2YxbnNmaTBwV2Y2OXRsXC9ubWtTeEpVWkdubm9QYmNIVWFzT29RUm9tMkhEZllFazVGZHAyeVZxNnBjelJteFRUTFVvdEdoeEZGbFwvVGVsQXhEVldRZ3NhIiwibWFjIjoiNjlmYzcwZGU2MjcxNTFmNTQ4MGM5ZDIwNDVkNzIzOTJjNTRiNzc1ZTNmNjFmMWFkOWRiYWY3ODlmYWEyODU2YyJ9";
 
-    public static void main(String[] args) {
-        Map<String, String> emailMap = getEmail();
-        String email = emailMap.get("email");
-        String code = emailMap.get("code");
-        System.out.println("-----------------------------------------------------------");
-        System.out.println(email);
-        System.out.println("-----------------------------------------------------------");
+    public static void main(String[] args) throws InterruptedException {
+        while (true) {
+            Map<String, String> emailMap = getEmail();
+            String email = emailMap.get("email");
+            String code = emailMap.get("code");
+            System.out.println("-----------------------------------------------------------");
+            System.out.println(email);
+            System.out.println("-----------------------------------------------------------");
 //        String code = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImdyYWNlbWF5NjkuNTUuNzQyQGdtYWlsLmNvbSIsInRpbWVzdGFtcCI6MTYyNDUyMzk3Nn0.UBcqq5UGQDXl0AUPHt9K4xOsLAPj1CAdJ4HFJQMgOf0";
 //        String email = "gracemay69.55.742@gmail.com";
-        printEmailMsgCode(code, email);
+            printEmailMsgCode(code, email);
+            Thread.sleep(1000L * 60 * 5); // 休眠5分钟
+        }
     }
 
     private static Map<String, String> getEmail() {
@@ -72,13 +75,13 @@ public class TempEmailTest {
         header.put("cookie", COOKIE);
         header.put("x-xsrf-token", X_XSRF_TOKEN);
         String param = "{\"code\":\"" + code + "\"}";
-        int i = 100;
-        while (--i > 0) {
+        while (true) {
             String result = HttpClientUtil.doPostJson("https://smailpro.com/app/email/inbox", param, header);
             // [{"textFrom":"liuliangjiasuqi@gmail.com","textSubject":"验证码","mid":"17a3cf5837fcf52d","textDate":"2021-06-24 14:39:20","textSnippet":"..."}]
             if (result.startsWith("[")) {
                 JSONArray resultJson = JSON.parseArray(result);
-                System.out.println(resultJson);
+//                System.out.println(resultJson);
+                System.out.print("-");
                 if (resultJson.size() > 0) {
                     JSONObject jsonObject = resultJson.getJSONObject(0);
                     String msgStr = HttpClientUtil.doPostJson("https://smailpro.com/app/email/inbox/" + jsonObject.getString("mid"), param, header);
@@ -90,9 +93,11 @@ public class TempEmailTest {
                     // 现在创建 matcher 对象
                     Matcher m = r.matcher(msgStr);
                     if (m.find()) {
+                        System.out.println(">");
                         System.out.println("======================================================");
                         System.out.println(email + ": " + m.group(0).substring(3));
                         System.out.println("======================================================");
+                        break;
                     }
                 }
             }

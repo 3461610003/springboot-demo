@@ -35,7 +35,7 @@ public class HttpClientUtil {
         // 创建Httpclient对象
         CloseableHttpClient httpclient = HttpClients.createDefault();
 
-        String resultString = "";
+        String resultString = "异常了 。。。";
         CloseableHttpResponse response = null;
         try {
             // 创建uri
@@ -53,6 +53,8 @@ public class HttpClientUtil {
             // 判断返回状态是否为200
             if (response.getStatusLine().getStatusCode() == 200) {
                 resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+            } else {
+                resultString = response.toString();
             }
         } catch (Exception e) {
             e.printStackTrace();
