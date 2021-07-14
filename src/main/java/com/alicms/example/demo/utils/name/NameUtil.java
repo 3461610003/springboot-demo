@@ -1,10 +1,10 @@
-package com.alicms.example.demo.utils;
+package com.alicms.example.demo.utils.name;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @description 姓名操作类
+ * @description 隐藏姓名
  * @author zhenghao
  * @date 2019/12/19 10:23
  */

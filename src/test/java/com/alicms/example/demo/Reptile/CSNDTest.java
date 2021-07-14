@@ -1,4 +1,4 @@
-package com.alicms.example.demo;
+package com.alicms.example.demo.Reptile;
 
 import java.io.IOException;
 import java.io.InputStream;

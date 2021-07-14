@@ -1,4 +1,4 @@
-package com.alicms.example.demo;
+package com.alicms.example.demo.encryption.rsa;
 
 import com.alicms.example.demo.utils.RSAUtils;
 

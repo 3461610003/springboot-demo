@@ -1,4 +1,4 @@
-package com.alicms.example.demo;
+package com.alicms.example.demo.life;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.DigestUtils;
@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 /**
  * <p>
- * 刷步数接口
+ * 乐心刷步数接口（已失效）
  * </p>
  *
  * @author zhenghao

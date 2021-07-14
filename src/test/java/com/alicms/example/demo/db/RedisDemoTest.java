@@ -1,4 +1,4 @@
-package com.alicms.example.demo.test;
+package com.alicms.example.demo.db;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

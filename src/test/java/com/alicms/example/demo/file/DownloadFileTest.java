@@ -1,4 +1,4 @@
-package com.alicms.example.demo;
+package com.alicms.example.demo.file;
 
 import com.alicms.example.demo.utils.HttpClientUtils;
 

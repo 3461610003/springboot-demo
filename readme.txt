@@ -6,7 +6,7 @@
     2.实现Fiter接口在请求中添加一些Header来解决跨域的问题 CorsFilter
     3.在Controller内设置相应头 com.alicms.example.demo.controller.IndexController
     4.在Controller上使用@CrossOrigin注解 com.alicms.example.demo.controller.IndexController
-5.姓名生成工具类、HashCode作用测试、jdk8新特性（lambda表达式，Stream相关操作） NameGenerate、HashCodeTest、Jdk8NewTest
+5.姓名生成工具类、生成用户数据、HashCode作用测试、jdk8新特性（lambda表达式，Stream相关操作） NameGenerate、GenerateIdTest、HashCodeTest、Jdk8NewTest
 6.@EqualsAndHashCode注解测试 com.alicms.example.demo.model.Hello
 7.RSAUtils公钥加密私钥解密测试，前端公钥加密，后端私钥解密，避免前端明文传输 com.alicms.example.demo.RSAUtilsTest
 8.gzip进行压缩 com.alicms.example.demo.GZipTest
@@ -40,5 +40,6 @@
 25.二进制测试、订单数据生成 com.alicms.example.demo.GenerateIdTest
 36.EventListener发布监听消息 com.alicms.example.demo.controller.EventListenerController、com.alicms.example.demo.test.EventListenerTest
 37.curl,httpUtil,restTemplate请求测试，com.alicms.example.demo.test
-38.区块链对接工具库测试，tron链代币工具类，获取btc手续费，com.alicms.example.demo.blockchain、
+38.区块链对接工具库测试，tron链代币工具类，获取btc手续费，com.alicms.example.demo.blockchain
+39.计算文件md5值 Md5FileTest
 

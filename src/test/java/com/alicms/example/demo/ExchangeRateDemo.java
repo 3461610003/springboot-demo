@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 /**
  * @author zhenghao
- * @description 请求
+ * @description 国际汇率接口测试
  * @date 2020/7/13 17:05
  */
 public class ExchangeRateDemo {

@@ -1,4 +1,4 @@
-package com.alicms.example.demo;
+package com.alicms.example.demo.encryption;
 
 import com.alicms.example.demo.utils.ZipUtil;
 import lombok.extern.slf4j.Slf4j;

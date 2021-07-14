@@ -1,4 +1,4 @@
-package com.alicms.example.demo;
+package com.alicms.example.demo.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
