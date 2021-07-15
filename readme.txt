@@ -25,7 +25,7 @@
      Short-circuiting：短路循环
          anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit
 13.文件下载（爬虫爬文件），文件合并，文本文件读写 com.alicms.example.demo.DownloadFileTest、FileMergeAndSplitUtil、TextFileStreamUtil
-14.BindingResult Valid 的使用 com.alicms.example.demo.DownloadFileTest
+14.BindingResult Valid 的使用 com.alicms.example.demo.controller.BindingResultController
 15.百度语音合成sdk测试 com.alicms.example.demo.baidu
 16.验证码生成 com.alicms.example.demo.controller.ImgCodeDemoController
 17.事务中有创表语句不能回滚问题 com.alicms.example.demo.controller.TransactionalDemoController
